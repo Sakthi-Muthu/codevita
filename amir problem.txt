@@ -1,0 +1,18 @@
+def getCombinations(compound, eq): 
+	input1 = valency(compound[0]) 
+	input2 = valency(compound[1]) 
+	res = [] 
+	for i in range(eq, 0, -1): 
+		if i % input1 == 0 and (eq - i) % input2 == 0: 
+			res.append((i // input1, (eq - i) // input2)) 
+	return res
+def printCombinations(compound, eq): 
+	if not isPossible(compound, eq): 
+		print("Not Possible") 
+	else: 
+		res = getCombinations(compound, eq) 
+		for i in range(len(res) - 1, -1, -1): 
+			print(compound[0], res[i][0], compound[1], res[i][1]) 
+compound = "AB" 
+eq = 10
+printCombinations(compound, eq)
