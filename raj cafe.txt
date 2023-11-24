@@ -1,0 +1,29 @@
+from collections import deque
+
+def find_serving_order_position(queue, friend_prior):
+    served_orders = 0
+
+    while queue:
+        current_order = queue.popleft()
+        served_orders += 1
+
+        if current_order[1] == friend_prior9*:
+            return served_orders
+
+        for i in range(len(queue)):
+            queue[i] = (queue[i][0], queue[i][1] + 1)
+
+    return -1  
+def main():
+    queue = deque([(1, 5), (2, 3), (3, 8), (4, 5)])
+    friend_prior = 3
+
+    position = find_serving_order_position(queue, friend_prior)
+
+    if position != -1:
+        print(f"Raj's friend will be served after {position} orders.")
+    else:
+        print("Raj's friend's order is not in the current queue.")
+
+if _name_ == "_main_":
+    main()3
